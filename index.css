@@ -1,0 +1,83 @@
+/* implement grid */
+body {
+    display: grid;
+    border-color: grey;
+    border-style: solid;
+    border-width: 1px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* select h1 element, align it center, color lightblue, background lightgray */
+h1 {
+    grid-column: 1 / -1;
+    background-color: lightgray;
+    padding: 10px;
+    border: lightslategray;
+    font-weight: bold;
+    color: black;
+    justify-self: center;
+}
+
+/* select ids */
+#myyellowButton {
+    grid-column: 1;
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+}
+
+#myblueButton {
+    grid-column: 2;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+}
+
+#mygreenButton {
+    grid-column: 3;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+}
+
+/* select the paragraph */
+p {
+    grid-column: 1 / -1;
+    grid-template-rows: auto;
+    background-color: lightyellow;
+    padding: 10px;
+    border: 1px solid lightgray;
+    justify-self: left;
+    font-weight: normal;
+    color: black;
+}
+
+#myboldfontbutton {
+    font-weight: bold;
+}
+
+#mynormalfontbutton {
+    font-weight: normal;
+}
+
+#myitalicfontbutton {
+    font-style: italic;
+}
+
+#myList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#myList li {
+    padding: 5px;
+    border-bottom: 1px solid lightgray;
+}
