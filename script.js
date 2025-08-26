@@ -61,3 +61,92 @@ while (j <= 5) {
     console.log("Counting with while loop: " + j);
     j++;
 }
+
+// Foreach loop
+const numbers = [1, 2, 3, 4, 5];
+numbers.forEach((num) => {
+    console.log("Counting with foreach loop: " + num);
+});
+
+//Part four Mastering the DOM
+// interactive buttons used to change the background color
+const yellowBtn = document.getElementById("myyellowButton");
+yellowBtn.addEventListener("click", () => {
+    document.body.style.backgroundColor = "yellow";
+});
+
+const blueBtn = document.getElementById("myblueButton");
+blueBtn.addEventListener("click", () => {
+    document.body.style.backgroundColor = "blue";
+});
+
+const greenBtn = document.getElementById("mygreenButton");
+greenBtn.addEventListener("click", () => {
+    document.body.style.backgroundColor = "green";
+});
+
+// Interactive buttons used to change the font of the paragraph
+const paragraph = document.getElementById("myParagraph");
+const boldBtn = document.getElementById("myboldfontbutton");
+boldBtn.addEventListener("click", () => {
+    paragraph.style.fontStyle = "bold";
+    paragraph.style.fontWeight = "bold";
+});
+
+const normalBtn = document.getElementById("mynormalfontbutton");
+normalBtn.addEventListener("click", () => {
+    paragraph.style.fontWeight = "normal";
+    paragraph.style.fontStyle = "normal";
+});
+
+const italicBtn = document.getElementById("myitalicfontbutton");
+italicBtn.addEventListener("click", () => {
+    paragraph.style.fontStyle = "italic";
+    paragraph.style.fontWeight = "normal";
+});
+
+// using the DOM to add and remove items from the list
+
+const myList = document.getElementById("myList");
+
+// Adding list items to my existing list
+function addListItem(text) {
+    // Create a new list item
+    const newItem = document.createElement("li");
+    // Set the text content
+    newItem.textContent = text;
+    // Append the new item to the list
+    myList.appendChild(newItem);
+}
+addListItem("Item 5");
+addListItem("Item 6");
+addListItem("Item 7");
+
+// removing list item using its index
+function removeListItem(index) {
+    // grabbing all list items
+    const items = myList.getElementsByTagName("li");
+    // checking if the index is valid
+    if (index >=0 && index < items.length) {
+        // removing the item
+        myList.removeChild(items[index]);
+    }
+}
+removeListItem(2);
+
+// removing list items using the text
+function removeItemByText(text) {
+    // grabbing all list items
+    const items = myList.getElementsByTagName("li");
+    // looping through the list items
+    for (let i = 0; i < items.length; i++) {
+        //checking if the current item's text matches the text to remove
+        if(items[i].textContent === text) {
+            // remove the item
+            myList.removeChild(items[i]);
+            break; // Stop the loop once the item is found and removed
+        }
+    }
+}
+
+removeItemByText("Item 7");
